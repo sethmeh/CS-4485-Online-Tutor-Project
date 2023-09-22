@@ -1,0 +1,16 @@
+#Query for TUTOR LIST REQUIREMENT
+#Query to select all the tuples with the matching tutor name or subject
+#Parameters: Name parameter (name of tutor searching for), Subject parameter (name of subject searching for)
+
+SELECT Tutor.name
+FROM Tutor
+WHERE Tutor.name LIKE '%name parameter%'
+  OR EXISTS (
+    SELECT 1
+    FROM Subject_List
+    WHERE Subject_List.subject LIKE CONCAT('%', subject, '%') AND subject = 'subject parameter'
+  );
+
+
+
+#Next Query goes Here:
