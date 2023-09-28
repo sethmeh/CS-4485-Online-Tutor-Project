@@ -1,4 +1,4 @@
-#Query for TUTOR LIST REQUIREMENT
+#Query for TUTOR LIST requirement
 #Query to select all the tuples with the matching tutor name or subject
 #Parameters: Name parameter (name of tutor searching for), Subject parameter (name of subject searching for)
 
@@ -11,6 +11,25 @@ WHERE Tutor.name LIKE '%name parameter%'
     WHERE Subject_List.subject LIKE CONCAT('%', subject, '%') AND subject = 'subject parameter'
   );
 
+#############################################
 
+#Queries for USER FAVORITE LIST requirement
 
+#Query to insert a new tutor to the user's favorite list
+#Parameters: Tutor Name, User Name
+INSERT INTO User_Favorites (T_Username, U_Username)
+VALUES ("Tutor Username Parameter" , "User Username Parameter");
+
+#Query to display all tutors on a User's favorite list
+#Parameters: User Name
+Select T_Username
+FROM User_Favorites
+WHERE U_Username = "User Username Parameter";
+
+#Query to Delete a tutor from a User's favorite list
+#Parameters: Tutor Name, User Name
+DELETE FROM User_Favorites
+WHERE T_Username = "Tutor Username Parameter";
+
+##################################################
 #Next Query goes Here:
