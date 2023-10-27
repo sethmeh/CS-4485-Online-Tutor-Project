@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My Express App</title>
+</head>
+<body>
+    <h1>Welcome to My Express App</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>About Me</th>
+            <th>2FA Data</th>
+            <th>Hours Tutored</th>
+        </tr>
+        <% tutorData.forEach(function(tutor) { %>
+            <tr>
+                <td><%= tutor.Username %></td>
+                <td><%= tutor.Name %></td>
+                <td><%= tutor.Password %></td>
+                <td><%= tutor.About_Me %></td>
+                <td><%= tutor.2FA_Data %></td>
+                <td><%= tutor.Hours_Tutored %></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
