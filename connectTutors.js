@@ -125,42 +125,7 @@ connection.connect((err) => {
                         app.listen(port, () => {
                             console.log(`Server is running on port ${port}`);
                         });
-                        
-
-                        //////////////////////////////////
-
-                        ///////////////
-
-                        /*
-                        // After executing the query to fetch data from the 'Tutor' table
-                        connection.query(selectTutorQuery, (err, rows, fields) => {
-                            if (err) {
-                                console.error('Error fetching data from Tutor table:', err);
-                                res.status(500).send('Error fetching data');
-                                return;
-                            }
-                            
-                            const columnNames = fields.map(field => field.name);
-                            console.log('Column Names:', columnNames);
-                            const tutorData = rows; // Store the 'Tutor' table data
-                            // Render your HTML page with the 'tutorData' variable
-                            res.render("index", { tutorData, columnNames });
-                        });
-                        */
-                        
-                        ///////////////
-
-
-
-                        /*
-                        connection.end((endErr) => {
-                            if (endErr) {
-                                console.error('Error closing connection:', endErr.stack);
-                            } else {
-                                console.log('Connection closed:', connection.state);
-                            }
-                        });
-                        */
+                
                     }
                 })
 
