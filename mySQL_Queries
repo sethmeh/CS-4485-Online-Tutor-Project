@@ -32,4 +32,24 @@ DELETE FROM User_Favorites
 WHERE T_Username = "Tutor Username Parameter";
 
 ##################################################
+
+#Queries for printing out total hours tutored requirement
+
+#Query to print out the total hours tutored for all users
+#Parameters: none
+SELECT U_Username, sec_to_time(SUM((time_to_sec(End_Time) - time_to_sec(Start_Time)))) AS Total_Hours_Tutored
+FROM Appointment_List
+WHERE str_to_date(Date, '%m/%d/%Y') < NOW()
+GROUP BY U_Username;
+
+#Query to print out the total hours tutored for all tutors
+#Parameters: none
+SELECT T_Username, sec_to_time(SUM((time_to_sec(End_Time) - time_to_sec(Start_Time)))) AS Total_Hours_Tutored
+FROM Appointment_List
+WHERE str_to_date(Date, '%m/%d/%Y') < NOW()
+GROUP BY T_Username;
+
+########################################################
+
 #Next Query goes Here:
+
